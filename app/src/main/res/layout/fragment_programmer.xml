@@ -15,7 +15,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="textEnd"
-            android:editable="false"/>
+            android:editable="false"
+            android:text="11101001"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +30,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="MODE" />
+                android:text="MODE"
+                android:id="@+id/btn_programmer_mode" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -69,35 +72,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="A" />
+                android:text="A"
+                android:clickable="false"
+                android:textColor="@color/material_grey_600" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="B" />
+                android:text="B"
+                android:clickable="false"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="7" />
+                android:text="7"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="8" />
+                android:text="8"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="9" />
+                android:text="9"
+                android:textColor="@color/material_grey_600"/>
         </LinearLayout>
 
         <LinearLayout
@@ -111,35 +121,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="C" />
+                android:text="C"
+                android:clickable="false"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="D" />
+                android:text="D"
+                android:clickable="false"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="4" />
+                android:text="4"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="5" />
+                android:text="5"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="6" />
+                android:text="6"
+                android:textColor="@color/material_grey_600"/>
         </LinearLayout>
 
         <LinearLayout
@@ -153,14 +170,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="E" />
+                android:text="E"
+                android:clickable="false"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="F" />
+                android:text="F"
+                android:clickable="false"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
@@ -174,14 +195,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="2" />
+                android:text="2"
+                android:textColor="@color/material_grey_600"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="3" />
+                android:text="3"
+                android:textColor="@color/material_grey_600"/>
         </LinearLayout>
 
     </LinearLayout>

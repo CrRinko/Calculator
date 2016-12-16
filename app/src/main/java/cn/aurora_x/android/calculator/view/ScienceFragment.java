@@ -7,63 +7,84 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
+import android.widget.Button;
+import android.widget.EditText;
 
 import cn.aurora_x.android.calculator.R;
+import cn.aurora_x.android.calculator.presenter.ScienceFragmentPresenter;
 
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link ScienceFragment#newInstance} factory method to
- * create an instance of this fragment.
  */
 public class ScienceFragment extends Fragment {
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-//    private OnFragmentInteractionListener mListener;
+    //    private OnFragmentInteractionListener mListener;
+    private EditText editTextScreen;
+    private Button btnCE;
+    private Button btnC;
+    private Button btnDel;
+    private Button btnEqual;
+    private String screen;
+    private WebView webView;
+    private ScienceFragmentPresenter presenter;
+    boolean toOverRide=false;
 
     public ScienceFragment() {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ScienceFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static ScienceFragment newInstance(String param1, String param2) {
-        ScienceFragment fragment = new ScienceFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        screen = new String();
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_science, container, false);
+        View fragmentView = inflater.inflate(R.layout.fragment_science, container, false);
+        presenter = ScienceFragmentPresenter.getInstance();
+        presenter.setFragment(this);
+        editTextScreen = (EditText) fragmentView.findViewById(R.id.editText_science_screen);
+        btnC = (Button) fragmentView.findViewById(R.id.btn_science_c);
+        btnC.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                screen = new String();
+                editTextScreen.setText(screen);
+            }
+        });
+        btnCE = (Button) fragmentView.findViewById(R.id.btn_science_ce);
+        btnCE.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                screen = new String();
+                editTextScreen.setText(screen);
+            }
+        });
+        btnDel = (Button) fragmentView.findViewById(R.id.btn_science_del);
+        btnDel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (toOverRide){
+                    setScreen("");
+                    toOverRide=false;
+                }else {
+                    presenter.onButtonDelClick();
+                }
+            }
+        });
+        btnEqual = (Button) fragmentView.findViewById(R.id.btn_science_equals);
+        btnEqual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                presenter.onButtonEqualsClick();
+            }
+        });
+        return fragmentView;
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -90,6 +111,47 @@ public class ScienceFragment extends Fragment {
 //        mListener = null;
     }
 
+    public void onButtonClick(View view) {
+        Button button = (Button) view;
+        if(toOverRide){
+            setScreen("");
+            toOverRide=false;
+        }
+        switch (button.getId()) {
+            case R.id.btn_science_cos:
+                screen += button.getText().toString() + "(";
+                break;
+            case R.id.btn_science_sqrt:
+                screen += "sqrt(";
+                break;
+            case R.id.btn_science_multiply:
+                screen += "*";
+                break;
+            case R.id.btn_science_sin:
+                screen += button.getText().toString() + "(";
+                break;
+            case R.id.btn_science_tan:
+                screen += button.getText().toString() + "(";
+                break;
+            default:
+                screen += button.getText().toString();
+        }
+        editTextScreen.setText(screen);
+    }
+
+    public String getScreen() {
+        return screen;
+    }
+
+    public void setScreen(String screen) {
+        this.screen = screen;
+        editTextScreen.setText(screen);
+    }
+    public void throwException(String msg){
+        this.screen=screen;
+        editTextScreen.setText(msg);
+        toOverRide=true;
+    }
     /**
      * This interface must be implemented by activities that contain this
      * fragment to allow an interaction in this fragment to be communicated

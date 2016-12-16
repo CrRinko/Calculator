@@ -4,9 +4,11 @@ import android.content.Context;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.PopupMenu;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 import cn.aurora_x.android.calculator.R;
 
@@ -25,6 +27,8 @@ public class ConverterFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    private Button buttonFrom;
+    private Button buttonTo;
 
 //    private OnFragmentInteractionListener mListener;
 
@@ -63,7 +67,20 @@ public class ConverterFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_converter, container, false);
+        View view=inflater.inflate(R.layout.fragment_converter, container, false);
+        buttonFrom=(Button)view.findViewById(R.id.btn_converter_from);
+        buttonTo=(Button)view.findViewById(R.id.btn_converter_to);
+        View.OnClickListener switchBtnListener=new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                PopupMenu menu=new PopupMenu(getContext(),v);
+                menu.inflate(R.menu.converter_volume_menu);
+                menu.show();
+            }
+        };
+        buttonFrom.setOnClickListener(switchBtnListener);
+        buttonTo.setOnClickListener(switchBtnListener);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

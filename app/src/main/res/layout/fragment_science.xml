@@ -15,7 +15,11 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:textAlignment="textEnd"
-            android:editable="false"/>
+            android:editable="false"
+            android:text=""
+            android:textIsSelectable="false"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:id="@+id/editText_science_screen" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,35 +32,42 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="sin" />
+                android:text="sin"
+                android:id="@+id/btn_science_sin"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="CE" />
+                android:text="CE"
+                android:id="@+id/btn_science_ce"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="C" />
+                android:text="C"
+                android:id="@+id/btn_science_c"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Del" />
+                android:text="Del"
+                android:id="@+id/btn_science_del"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="/" />
+                android:text="/"
+                android:id="@+id/btn_science_div"
+                android:onClick="onScienceButtonClick"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,77 +80,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="cos" />
+                android:text="cos"
+                android:id="@+id/btn_science_cos"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="7" />
+                android:text="7"
+                android:id="@+id/btn_science_7"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="8" />
+                android:text="8"
+                android:id="@+id/btn_science_8"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="9" />
+                android:text="9"
+                android:id="@+id/btn_science_9"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="x" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="tan" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="4" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="5" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="6" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="-" />
+                android:text="x"
+                android:id="@+id/btn_science_multiply"
+                android:onClick="onScienceButtonClick"/>
         </LinearLayout>
 
         <LinearLayout
@@ -153,35 +132,45 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="x^y" />
+                android:text="tan"
+                android:id="@+id/btn_science_tan"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="1" />
+                android:text="4"
+                android:id="@+id/btn_science_4"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="2" />
+                android:text="5"
+                android:id="@+id/btn_science_5"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="3" />
+                android:text="6"
+                android:id="@+id/btn_science_6"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="+" />
+                android:text="-"
+                android:id="@+id/btn_science_sub"
+                android:onClick="onScienceButtonClick"/>
         </LinearLayout>
 
         <LinearLayout
@@ -195,35 +184,96 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="(" />
+                android:text="√"
+                android:id="@+id/btn_science_sqrt"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text=")" />
+                android:text="1"
+                android:id="@+id/btn_science_1"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="0" />
+                android:text="2"
+                android:id="@+id/btn_science_2"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="." />
+                android:text="3"
+                android:id="@+id/btn_science_3"
+                android:onClick="onScienceButtonClick"/>
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="=" />
+                android:text="+"
+                android:id="@+id/btn_science_plus"
+                android:onClick="onScienceButtonClick"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="("
+                android:id="@+id/btn_science_lb"
+                android:onClick="onScienceButtonClick"/>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text=")"
+                android:id="@+id/btn_science_rb"
+                android:onClick="onScienceButtonClick"/>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="0"
+                android:id="@+id/btn_science_0"
+                android:onClick="onScienceButtonClick"/>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="."
+                android:id="@+id/btn_science_dot"
+                android:onClick="onScienceButtonClick"/>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="="
+                android:id="@+id/btn_science_equals"/>
         </LinearLayout>
     </LinearLayout>
 </FrameLayout>

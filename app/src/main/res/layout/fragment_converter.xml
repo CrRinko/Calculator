@@ -14,7 +14,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="FROM"
+            android:text="立方厘米"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"/>
 
@@ -23,12 +23,14 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:editable="false"
-            android:textAlignment="textEnd" />
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="25" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="TO"
+            android:text="升"
             android:layout_marginStart="@dimen/activity_horizontal_margin"
             android:layout_marginTop="@dimen/activity_vertical_margin"/>
         <EditText
@@ -36,7 +38,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:editable="false"
-            android:textAlignment="textEnd" />
+            android:textAlignment="textEnd"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:text="0.25" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -49,14 +53,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="FROM" />
+                android:text="FROM"
+                android:id="@+id/btn_converter_from" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="TO" />
+                android:text="TO"
+                android:id="@+id/btn_converter_to" />
 
             <Button
                 style="?android:attr/buttonStyleSmall"

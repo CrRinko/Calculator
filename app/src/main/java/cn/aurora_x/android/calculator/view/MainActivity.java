@@ -11,11 +11,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
 import cn.aurora_x.android.calculator.R;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
+    private ScienceFragment scienceFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +34,9 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
-        ScienceFragment scienceFragment=ScienceFragment.newInstance("","");
-        FragmentManager fragmentManager=getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.content_frame_layout,scienceFragment).commit();
+        scienceFragment=new ScienceFragment();
+        FragmentManager manager=getSupportFragmentManager();
+        manager.beginTransaction().add(R.id.content_frame_layout,scienceFragment).commit();
     }
 
     @Override
@@ -78,5 +80,9 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    public void onScienceButtonClick(View view){
+        scienceFragment.onButtonClick(view);
     }
 }
